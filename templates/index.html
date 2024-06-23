@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Analyzer</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center"><i class="fas fa-comments"></i> Review Analyzer</h1>
+        <form id="review-form" class="form">
+            <div class="form-group">
+                <textarea id="review-text" class="form-control" rows="5" placeholder="Enter your review here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-search"></i> Analyze</button>
+        </form>
+        <div id="result"></div>
+        <hr>
+        <form id="url-form" class="form">
+            <div class="form-group">
+                <input type="text" id="review-url" class="form-control" placeholder="Enter the URL of the reviews...">
+            </div>
+            <button type="submit" class="btn btn-success btn-block"><i class="fas fa-link"></i> Fetch and Analyze Reviews</button>
+        </form>
+        <div id="url-result"></div>
+        <div id="loading" class="loading-spinner" style="display: none;">
+            <i class="fas fa-spinner fa-spin"></i> Loading...
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
